@@ -5,7 +5,7 @@ test('Amazon Website', async ({ }, testInfo) => {
   //  const browser: Browser = await chromium.launch({ headless: false });
     const browser: Browser = await chromium.launch();
     const page: Page = await browser.newPage();
-    testInfo.setTimeout(60000);
+   // testInfo.setTimeout(60000);
 
     await page.goto("https://www.amazon.com/");
     await page.waitForLoadState('load');
