@@ -2,7 +2,8 @@ import { test, expect, chromium } from '@playwright/test';
 import type { Browser, Page } from 'playwright';
 
 test('Amazon Website', async ({ }, testInfo) => {
-    const browser: Browser = await chromium.launch({ headless: false });
+  //  const browser: Browser = await chromium.launch({ headless: false });
+    const browser: Browser = await chromium.launch();
     const page: Page = await browser.newPage();
     testInfo.setTimeout(60000);
 
