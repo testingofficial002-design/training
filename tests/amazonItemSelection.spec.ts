@@ -22,7 +22,7 @@ if (await continueButton.isVisible()) {
 
 
     await page.waitForLoadState('load');
-    const item = page.locator("//div[contains(text(),'Smart')]/ancestor::a[@class='hmenu-item']");
+    const item = page.locator("//div[contains(text(),'Prime Video')]/ancestor::a[@class='hmenu-item']");
     const firstItem = item.first();
 
     await firstItem.waitFor({ state: 'visible', timeout: 5000 });
@@ -30,7 +30,7 @@ if (await continueButton.isVisible()) {
 
     // Locate sub-items under "smart phones"
     await page.waitForLoadState('load');
-    const subItems = page.locator("section[aria-labelledby*='Smart'] a.hmenu-item");
+    const subItems = page.locator("section[aria-labelledby*='Prime'] a.hmenu-item");
 
     // Count sub-items
     await subItems.first().waitFor({ state: 'visible', timeout: 5000 });
