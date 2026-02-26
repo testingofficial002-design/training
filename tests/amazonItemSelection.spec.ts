@@ -45,6 +45,6 @@ if (await continueButton.isVisible()) {
     // Click the first sub-item
     await subItems.first().click();
 
-    await browser.close();
+   // await browser.close();
 });
 
