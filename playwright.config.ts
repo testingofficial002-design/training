@@ -29,6 +29,17 @@ export default defineConfig({
    },
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
+    //bypass basic bot detection
+     // 1. bypass basic bot detection
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
+  
+  // 2. set a standard desktop size so elements aren't hidden
+  viewport: { width: 1280, height: 720 },
+ 
+  // 3. hide the "automated" flag from Amazon's scripts
+  launchOptions: {
+    args: ['--disable-blink-features=AutomationControlled'],
+  },
     /* Base URL to use in actions like `await page.goto('')`. */
     // baseURL: 'http://localhost:3000',
 
