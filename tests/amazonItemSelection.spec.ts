@@ -22,7 +22,7 @@ test('Amazon Website', async ({ }, testInfo) => {
     await firstItem.click();
 
     // Locate sub-items under "smart phones"
-    await page.waitForLoadState('load')
+    await page.waitForLoadState('load');
     const subItems = page.locator("section[aria-labelledby*='Smart'] a.hmenu-item");
 
     // Count sub-items
