@@ -10,6 +10,13 @@ test('Amazon Website', async ({ }, testInfo) => {
     await page.goto("https://www.amazon.com/");
     await page.waitForLoadState('load');
 
+  // Check if the bot detection page is visible
+const continueButton = page.getByRole('button', { name: 'Continue shopping' });
+if (await continueButton.isVisible()) {
+    await continueButton.click();
+    // Optional: Wait a moment for the real homepage to load
+    await page.waitForLoadState('domcontentloaded');
+}
     await page.waitForSelector('#nav-hamburger-menu');
     await page.click("//a[@id='nav-hamburger-menu']");
 
