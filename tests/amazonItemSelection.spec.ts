@@ -29,7 +29,7 @@ if (await continueButton.isVisible()) {
     await firstItem.click();
 
     // Locate sub-items under "smart phones"
-   // await page.waitForLoadState('load');
+    await page.waitForLoadState('load');
     const subItems = page.locator("section[aria-labelledby*='Prime'] a.hmenu-item");
 
     // Count sub-items
@@ -43,7 +43,7 @@ if (await continueButton.isVisible()) {
     console.log('Categories:', allNames);
 
     // Click the first sub-item
-    await subItems.first().click();
+    //await subItems.first().click();
 
    // await browser.close();
 });
